@@ -102,7 +102,6 @@ function renderLearning() {
       <h3>${chapter.title}</h3>
       <p class="learning-lead">${chapter.focus}</p>
       <div class="think-card"><strong>這一章要追問：</strong><br />${chapter.think}</div>
-      <p class="teacher-only"><strong>教師提示：</strong>${chapter.teacher}</p>
     `,
     text: `
       <h3>文言節選</h3>
@@ -117,7 +116,6 @@ function renderLearning() {
       <h3>停下來想一想</h3>
       <div class="think-card">${chapter.think}</div>
       <p class="learning-lead">試著先提出一個立場，再從漫畫情節或原文節選找出至少一個證據。</p>
-      <p class="teacher-only"><strong>投影帶讀：</strong>${chapter.teacher}</p>
     `
   };
   content.innerHTML = entries[state.tab];
@@ -188,14 +186,7 @@ function bindDialog() {
   });
 }
 
-function bindTeacherMode() {
-  const toggle = $("#teacher-toggle");
-  toggle.addEventListener("click", () => {
-    const active = document.body.classList.toggle("teacher-mode");
-    toggle.setAttribute("aria-pressed", String(active));
-    toggle.querySelector("span:last-child").textContent = active ? "教師模式已開啟" : "教師引導";
-    renderLearning();
-  });
+function bindPrintGuide() {
   $("#print-guide").addEventListener("click", () => window.print());
 }
 
@@ -251,6 +242,6 @@ renderChapterList();
 bindNavigation();
 bindTabs();
 bindDialog();
-bindTeacherMode();
+bindPrintGuide();
 bindQuiz();
 setPage(0);
