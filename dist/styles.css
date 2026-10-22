@@ -74,6 +74,7 @@ img { display: block; max-width: 100%; }
 .top-nav a { position: relative; }
 .top-nav a::after { content: ""; position: absolute; left: 0; bottom: -.35rem; width: 0; height: 2px; background: var(--vermilion); transition: width .25s ease; }
 .top-nav a:hover::after, .top-nav a:focus-visible::after { width: 100%; }
+.site-logo { flex: 0 0 auto; width: 50px; height: 50px; object-fit: cover; border: 1px solid rgba(43, 33, 29, .2); box-shadow: 3px 3px 0 rgba(59, 42, 34, .15); }
 
 .hero { min-height: min(720px, calc(100vh - 84px)); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr); overflow: hidden; }
 .hero-copy { align-self: center; max-width: 670px; padding: clamp(4rem, 9vw, 9rem) max(6vw, 2rem); padding-right: clamp(2rem, 5vw, 6rem); }
@@ -280,6 +281,7 @@ fieldset.is-correct .explanation, fieldset.is-wrong .explanation { display: bloc
 @media (max-width: 560px) {
   .brand strong { font-size: .92rem; }
   .brand-seal { width: 2.15rem; height: 2.15rem; }
+  .site-logo { width: 42px; height: 42px; }
   .hero h1 { font-size: 3rem; }
   .hero-art { height: 285px; }
   .vertical-poem { right: 8%; top: 12%; }
