@@ -59,11 +59,11 @@ img { display: block; max-width: 100%; }
 .site-logo { flex: 0 0 auto; width: 50px; height: 50px; object-fit: cover; border: 1px solid rgba(43, 33, 29, .2); box-shadow: 3px 3px 0 rgba(59, 42, 34, .15); }
 
 .hero { min-height: min(660px, calc(100vh - 84px)); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); overflow: hidden; }
-.hero-copy { align-self: center; max-width: 700px; padding: clamp(4rem, 9vw, 8rem) max(6vw, 2rem); padding-right: clamp(2rem, 5vw, 6rem); }
+.hero-copy { align-self: center; max-width: 700px; padding: clamp(4rem, 9vw, 8rem) max(6vw, 2rem); padding-right: clamp(2rem, 5vw, 6rem); container-type: inline-size; }
 .eyebrow { margin: 0 0 1rem; color: var(--vermilion); font-size: .74rem; font-weight: 700; letter-spacing: .12em; }
 .eyebrow span { display: inline-block; padding: .1rem .48rem; margin-right: .45rem; color: var(--paper); background: var(--vermilion); letter-spacing: .06em; }
 h1, h2 { margin: 0; font-family: var(--serif); }
-.hero h1 { white-space: nowrap; font-size: clamp(1.95rem, 4.25vw, 4.9rem); line-height: 1.18; letter-spacing: .01em; font-weight: 900; }
+.hero h1 { display: inline-block; width: max-content; max-width: none; white-space: nowrap !important; word-break: keep-all; overflow-wrap: normal; text-wrap: nowrap; font-size: clamp(1.6rem, 10.2cqi, 4.9rem); line-height: 1.18; letter-spacing: .01em; font-weight: 900; }
 .hero-subtitle { margin: .38rem 0 0; color: var(--vermilion); font: 700 clamp(1.1rem, 2.05vw, 2.15rem)/1.45 var(--serif); letter-spacing: .05em; }
 .hero-summary { max-width: 31rem; margin: 1.6rem 0 1.8rem; color: var(--ink-soft); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; padding: .78rem 1.05rem; border: 1px solid transparent; font-weight: 700; transition: transform .2s, background .2s; }
@@ -146,7 +146,7 @@ progress::-moz-progress-bar { background: var(--vermilion); }
   .brand strong { font-size: .92rem; }
   .brand-seal { width: 2.15rem; height: 2.15rem; }
   .site-logo { width: 42px; height: 42px; }
-  .hero h1 { font-size: clamp(1.68rem, 8.9vw, 2.25rem); }
+  .hero h1 { font-size: clamp(1.6rem, 10.2cqi, 2.25rem); }
   .hero-art { height: 285px; }
   .vertical-label { right: 8%; top: 12%; }
   .chapter-nav-item strong { font-size: .76rem; }
