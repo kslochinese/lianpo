@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3b2a22" />
+    <meta
+      name="description"
+      content="以十八頁漫畫導讀《史記・廉頗藺相如列傳》，結合文言、思辨與閱讀評量的互動電子書。"
+    />
+    <title>完璧歸趙｜互動漫畫電子書</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#reader">跳到漫畫閱讀器</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="回到首頁">
+        <span class="brand-seal">玉</span>
+        <span><small>史記・名篇課讀</small><strong>完璧歸趙</strong></span>
+      </a>
+      <nav class="top-nav" aria-label="主選單">
+        <a href="#journey">故事脈絡</a>
+        <a href="#reader">漫畫閱讀</a>
+        <a href="#study">文言學習</a>
+        <a href="#quiz">閱讀測驗</a>
+      </nav>
+      <button id="teacher-toggle" class="teacher-toggle" type="button" aria-pressed="false">
+        <span class="teacher-icon" aria-hidden="true">教</span><span>教師引導</span>
+      </button>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>卷首</span>《史記・廉頗藺相如列傳》</p>
+          <h1 id="hero-title">一塊璧，<br /><em>三段人物課。</em></h1>
+          <p class="hero-summary">從「完璧歸趙」的智勇，到「澠池之會」的擔當，再到「負荊請罪」的和解。以漫畫走入戰國，以文本讀懂人物。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#reader">從第一頁開始閱讀 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#journey">先看故事地圖 <span aria-hidden="true">→</span></a>
+          </div>
+          <dl class="reading-stats" aria-label="教材內容摘要">
+            <div><dt>18</dt><dd>漫畫頁</dd></div>
+            <div><dt>3</dt><dd>核心篇章</dd></div>
+            <div><dt>6</dt><dd>思辨提問</dd></div>
+          </dl>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="jade-disc"><span>和氏璧</span></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <p class="vertical-poem">先國<br />後私</p>
+        </div>
+      </section>
+
+      <section id="journey" class="journey section-wrap" aria-labelledby="journey-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span>讀前導覽</span>先掌握故事的轉折</p>
+          <h2 id="journey-title">三章，一條人物成長線</h2>
+          <p>依序閱讀，更容易看見藺相如與廉頗如何以不同方式，守住趙國的尊嚴。</p>
+        </div>
+        <article class="background-card">
+          <div class="background-number">戰國<br />局勢</div>
+          <div><p class="card-kicker">為什麼一塊玉會引發危機？</p><h3>秦強趙弱，外交也是一場守國之戰。</h3></div>
+          <p>戰國時代，諸侯國競相擴張。秦國日益強大，趙國必須在軍事壓力與外交談判之間尋找生存空間。和氏璧、澠池宴與將相失和，看似是個人事件，實則都牽動一國的信義、尊嚴與安全。</p>
+        </article>
+        <div id="chapter-cards" class="chapter-cards" aria-label="故事章節"></div>
+      </section>
+
+      <section id="reader" class="reader section-wrap" aria-labelledby="reader-title">
+        <div class="reader-title-row">
+          <div>
+            <p class="eyebrow"><span>漫畫閱讀器</span>點選頁碼、使用按鈕或鍵盤左右鍵翻頁</p>
+            <h2 id="reader-title">跟著圖像，讀進戰國現場</h2>
+          </div>
+          <div class="reader-progress-wrap">
+            <span id="progress-label">第 1 / 18 頁</span>
+            <progress id="reading-progress" value="1" max="18">1 / 18</progress>
+          </div>
+        </div>
+
+        <div class="reader-shell">
+          <aside class="chapter-sidebar" aria-label="章節導覽">
+            <p class="sidebar-label">章回目錄</p>
+            <div id="chapter-list" class="chapter-list"></div>
+            <div class="sidebar-rule"></div>
+            <p class="sidebar-note">小提示：漫畫中的對話採現代語改寫；右側可對照文言節選與字詞。</p>
+          </aside>
+
+          <div class="comic-stage">
+            <div class="stage-topline">
+              <p id="page-chapter">卷一・完璧歸趙</p>
+              <p id="page-title">第一頁・秦書求璧</p>
+            </div>
+            <figure class="comic-frame">
+              <button id="image-zoom" class="image-zoom" type="button" aria-label="放大檢視本頁漫畫">
+                <img id="comic-image" src="" alt="《完璧歸趙》漫畫第 1 頁" />
+                <span class="zoom-hint">放大檢視 ↗</span>
+              </button>
+              <figcaption id="page-caption"></figcaption>
+            </figure>
+            <div class="reader-controls">
+              <button id="prev-page" class="reader-button" type="button"><span aria-hidden="true">←</span> 上一頁</button>
+              <button id="full-view" class="reader-button reader-button-light" type="button">全頁檢視</button>
+              <button id="next-page" class="reader-button" type="button">下一頁 <span aria-hidden="true">→</span></button>
+            </div>
+            <div id="page-dots" class="page-dots" aria-label="頁碼導覽"></div>
+          </div>
+
+          <aside class="learning-drawer" aria-label="本章學習工具">
+            <div class="drawer-heading">
+              <span class="drawer-seal">讀</span>
+              <div><p>隨頁學習</p><strong id="drawer-chapter">完璧歸趙</strong></div>
+            </div>
+            <div class="drawer-tabs" role="tablist" aria-label="學習內容分頁">
+              <button class="drawer-tab is-active" type="button" role="tab" data-tab="guide" aria-selected="true">導讀</button>
+              <button class="drawer-tab" type="button" role="tab" data-tab="text" aria-selected="false">原文</button>
+              <button class="drawer-tab" type="button" role="tab" data-tab="vocab" aria-selected="false">字詞</button>
+              <button class="drawer-tab" type="button" role="tab" data-tab="think" aria-selected="false">想想看</button>
+            </div>
+            <div id="learning-content" class="learning-content" aria-live="polite"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="study" class="study section-wrap" aria-labelledby="study-title">
+        <div class="study-intro">
+          <p class="eyebrow"><span>文言學習</span>由漫畫回到《史記》</p>
+          <h2 id="study-title">讀圖之後，再讀文字的力量</h2>
+          <p>漫畫幫我們看見情境；文言文則留下人物如何說服、抗辯與自省的精準語言。</p>
+        </div>
+        <div class="study-grid">
+          <article class="study-card quote-card">
+            <p class="card-kicker">人物語言</p>
+            <blockquote>「吾所以為此者，以先國家之急而後私讎也。」</blockquote>
+            <p>藺相如用一句話說明退讓並非怯弱，而是把國家安危放在私人恩怨之前。</p>
+            <button class="inline-jump" type="button" data-page="16">回到漫畫第 17 頁 →</button>
+          </article>
+          <article class="study-card relation-card">
+            <p class="card-kicker">人物關係</p>
+            <div class="relation-map" aria-label="主要人物關係">
+              <span class="person person-zhao">趙王</span>
+              <span class="line line-one"></span><span class="line line-two"></span>
+              <span class="person person-xiangru">藺相如</span>
+              <span class="person person-lianpo">廉頗</span>
+              <span class="person person-qin">秦王</span>
+            </div>
+            <p>藺相如主外交、廉頗主軍事；兩人從衝突走向合作，是趙國得以自守的重要關鍵。</p>
+          </article>
+          <article class="study-card method-card">
+            <p class="card-kicker">閱讀方法</p>
+            <ol>
+              <li><span>一</span>找出「誰想要什麼」</li>
+              <li><span>二</span>比較人物如何回應危機</li>
+              <li><span>三</span>用原文的關鍵詞說明判斷</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section id="quiz" class="quiz-section" aria-labelledby="quiz-title">
+        <div class="quiz-wrap">
+          <div class="quiz-intro">
+            <p class="eyebrow eyebrow-light"><span>讀後自測</span>完成三題，檢核你的理解</p>
+            <h2 id="quiz-title">你讀懂「智、勇、和」了嗎？</h2>
+            <p>作答後立即查看解析。這不是成績單，而是回到故事、重新推論人物選擇的起點。</p>
+            <div class="quiz-scroll"><span></span>向右閱讀題目</div>
+          </div>
+          <form id="quiz-form" class="quiz-form">
+            <fieldset data-answer="b">
+              <legend><span>01</span>藺相如在秦廷持璧抗秦，最核心的判斷是什麼？</legend>
+              <label><input type="radio" name="q1" value="a" />秦王已真心答應割讓十五城</label>
+              <label><input type="radio" name="q1" value="b" />秦國強大卻可能不會守信，須先保住趙國的璧</label>
+              <label><input type="radio" name="q1" value="c" />趙王希望立刻與秦國開戰</label>
+              <p class="explanation">關鍵在「秦強而趙弱」的實力差距，以及秦王只賞玩寶玉、未提交城的行為。</p>
+            </fieldset>
+            <fieldset data-answer="a">
+              <legend><span>02</span>澠池之會上，藺相如為何堅持要秦王擊缶？</legend>
+              <label><input type="radio" name="q2" value="a" />維護趙國國君與國家的禮儀尊嚴</label>
+              <label><input type="radio" name="q2" value="b" />想讓宴會變得更熱鬧</label>
+              <label><input type="radio" name="q2" value="c" />想藉機取得秦國城池</label>
+              <p class="explanation">藺相如不是逞一時口舌，而是在外交場合要求相對平等的禮節。</p>
+            </fieldset>
+            <fieldset data-answer="c">
+              <legend><span>03</span>「負荊請罪」最能呈現的關係轉變是？</legend>
+              <label><input type="radio" name="q3" value="a" />藺相如因害怕廉頗而辭官</label>
+              <label><input type="radio" name="q3" value="b" />廉頗從此不再參與軍事</label>
+              <label><input type="radio" name="q3" value="c" />廉頗理解相如先國後私，主動承認自己的過錯</label>
+              <p class="explanation">兩人從競逐位次走向「刎頸之交」，把私人衝突轉為共同守國的力量。</p>
+            </fieldset>
+            <div class="quiz-actions">
+              <button class="button button-paper" type="submit">提交並看解析</button>
+              <button id="reset-quiz" class="reset-button" type="button">重新作答</button>
+              <output id="quiz-result" aria-live="polite"></output>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="teacher" class="teacher-panel section-wrap" aria-labelledby="teacher-title">
+        <div class="teacher-panel-copy">
+          <p class="eyebrow"><span>教師引導</span>一堂課，可以這樣開始</p>
+          <h2 id="teacher-title">把「衝突」讀成<br />人物選擇的練習</h2>
+          <p>先讓學生看見情節，再請他們為人物找理由。教師模式會在閱讀器中亮起提問提示，協助快速投影帶讀。</p>
+          <button id="print-guide" class="button button-outline" type="button">列印本頁教材</button>
+        </div>
+        <div class="teacher-steps">
+          <article><span>01</span><h3>看圖猜局勢</h3><p>秦王為何想要和氏璧？趙國最怕失去什麼？</p><button class="inline-jump" type="button" data-page="0">跳到第 1 頁 →</button></article>
+          <article><span>02</span><h3>替人物辯護</h3><p>相如的退讓是害怕，還是另有考量？請用漫畫與原文作證。</p><button class="inline-jump" type="button" data-page="16">跳到第 17 頁 →</button></article>
+          <article><span>03</span><h3>把和解說清楚</h3><p>廉頗的道歉改變了什麼？若你是旁人，會如何促成兩人合作？</p><button class="inline-jump" type="button" data-page="17">跳到第 18 頁 →</button></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>《完璧歸趙》互動漫畫電子書</strong>　教材依使用者提供漫畫編排，文言節選出自《史記・廉頗藺相如列傳》。</p>
+      <p>閱讀提醒：以圖像理解情境，以原文檢證判斷。</p>
+    </footer>
+
+    <dialog id="comic-dialog" class="comic-dialog" aria-label="全頁漫畫檢視">
+      <div class="dialog-toolbar">
+        <p id="dialog-title">全頁漫畫檢視</p>
+        <button id="dialog-close" type="button">關閉 ×</button>
+      </div>
+      <img id="dialog-image" src="" alt="" />
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
